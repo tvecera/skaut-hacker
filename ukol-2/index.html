@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skautská odborka HACKER / HACKERKA - Úkol 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <i id="question-icon" class="fa-regular fa-circle-question fa-xl question-icon"></i>
+    <img src="logo.png" alt="Logo">
+    <h1>Přístup do tajné databáze zločinců</h1>
+    <p class="center">Chceš se dostat do naší tajné databáze zločinců? Uhodni heslo a stiskni tlačítko!</p>
+    <input type="password" id="password" placeholder="Zadejte heslo">
+    <button id="submit-btn">Přihlásit</button>
+    <p class="error" id="error-msg">Špatné heslo <strong>Hackere / Hackerko</strong>, tvoje jméno a fotka byla odeslána
+        do FBI, NSA, KGB, Mosadu a lišce co bydlí v Prokopáku (kousek od chaty :))</p>
+</div>
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <i class="fa-regular fa-circle-xmark fa-xl close" id="close"></i>
+        <h1>Nápověda: Jak zjistit heslo</h1>
+        <h2>Co je HTML a zdrojový kód stránky?</h2>
+        <p>HTML (HyperText Markup Language) je značkovací jazyk používaný k vytváření webových stránek. HTML sestává z
+            různých značek (tagů), které říkají prohlížeči, jak má stránku zobrazit. Zdrojový kód stránky je soubor
+            textu, který obsahuje HTML, CSS a JavaScript, které dohromady tvoří vzhled a chování webové stránky.</p>
+        <p>Víte, že si pro každou webovou stránku můřete zobrazit její zdrojový kód? Občas jsou tam velmi vtipné
+            komentáře, které tam nechal programátor a někdy ve zdrojovém kódu stránky můžete nalézt dokonce heslo.</p>
+        <h2>Jak zjistit heslo?</h2>
+        <p>
+            Otevřete zdrojový kód webové stránky. Můžete to udělat kliknutím pravým tlačítkem myši na stránce a
+            zvolením možnosti <strong>"Zobrazit zdroj stránky"</strong> nebo <strong>"Prozkoumat prvek"</strong> ve
+            vašem prohlížeči.
+        </p>
+        <p>
+            Prohledejte zdrojový kód stránky. Hledejte řádky kódu, které obsahují slovo <strong>"heslo"</strong> nebo
+            <strong>"password"</strong>.
+        </p>
+        <p>
+            V kódu můžete narazit na nějakou podmínku, která porovnává zadané heslo s tím správným. Pokud najdete
+            takovou podmínku, podívejte se, jaké je správné heslo. Například:
+        </p>
+        <p>
+            <code>
+                if (passwordInput.value !== "tajneheslo")
+            </code>
+        </p>
+        <p>
+            V tomto příkladě je správné heslo <strong>"tajneheslo"</strong>.
+        </p>
+        <p>
+            Zadejte zjištěné heslo do políčka pro heslo na webové stránce a stiskněte tlačítko pro přihlášení.
+            Pokud jste zadali správné heslo, měli byste získat přístup do tajné databáze zločinců.
+        </p>
+    </div>
+</div>
+<div class="modal" id="success-modal">
+    <div class="modal-content">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+
+        <i class="fa-regular fa-circle-xmark fa-xl close" id="success-close"></i>
+        <h2 class="center">Vyhrál jsi 1 Dogecoin!</h2>
+        <img src="coin.png" alt="1 Dogecoin">
+        <p>Uhodl jsi tajné heslo a získal/a přístup do tajné databáze zločinců! Jako odměnu vyhráváš 1 dogecoin do
+            oddílové pokladny!</p>
+        <p>Vyhrané dogecoiny proměníme a darujeme po skončení odborky.</p>
+        <p style="color: #e74c3c">Tato hra je určena pouze pro členy našeho oddílu. Upozorňujeme, že výhra v této hře
+            nezakládá žádný právní nárok na výhru.</p>
+        <h2>Co je to Dogecoin a kryptoměny?</h2>
+        <p>
+            Dogecoin je druh digitální měny, která se nazývá kryptoměna. Kryptoměny jsou elektronické peníze, které
+            můžete použít k nákupu věcí nebo pro služby, stejně jako když používáte normální peníze. Kryptoměny jsou
+            zvláštní, protože místo toho, aby je vydávala a kontrolovala vláda nebo centrální banka, jsou vytvářeny a
+            udržovány pomocí počítačových sítí a matematiky.
+        </p>
+        <p>
+            Kryptoměny, jako je Dogecoin, se často používají pro online transakce a investice. Jsou populární, protože
+            nabízejí určitou úroveň anonymity a bezpečnosti při provádění transakcí. Většina kryptoměn používá
+            technologii zvanou blockchain, která je jako veřejná účetní kniha všech transakcí provedených s danou
+            kryptoměnou. Blockchain je velmi bezpečný a téměř nemožné ho hacknout nebo podvést.
+        </p>
+        <p>
+            Dogecoin byl založen jako zábavná a přátelská alternativa k jiným kryptoměnám, jako je Bitcoin. Jeho logo a
+            jméno je založeno na populárním internetovém memu zvaném "Doge", který zobrazuje psa plemene Shiba Inu s
+            vtipnými texty psanými špatnou angličtinou. Dogecoin je známý svou silnou komunitou, která podporuje různé
+            charitativní a humanitární projekty.
+        </p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('question-icon').addEventListener('click', function () {
+        document.getElementById('modal').style.display = 'flex';
+    });
+
+    document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('modal').style.display = 'none';
+    });
+
+    document.getElementById('success-close').addEventListener('click', function () {
+        document.getElementById('success-modal').style.display = 'none';
+    });
+
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('submit-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    submitBtn.addEventListener('click', () => {
+        if (passwordInput.value !== "fosiliejsouhackeri") {
+            errorMsg.style.display = 'block';
+        } else {
+            errorMsg.style.display = 'none';
+            document.getElementById('success-modal').style.display = 'flex';
+        }
+    });
+
+</script>
+</body>
+</html>

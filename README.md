@@ -1,1 +1,2 @@
-# skaut-hacker
+# Skautská odborka HACKER / HACKERKA
+
